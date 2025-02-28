@@ -22,9 +22,9 @@ int main() {
 
         float densidade1, densidade2;
 
-        float pibcapita1, pibcapita2;
+        float pibcapita1, pibcapita2, superPoder1, superPoder2;
 
-        // Calculo densidade/ Calculo PIB;
+        // Calculos cartas
 
         densidade1 = populacao1 / area1;
 
@@ -34,8 +34,11 @@ int main() {
 
         pibcapita2 = pib2 / populacao2;
 
+        superPoder1 = (float)populacao1 + area1 + pib1 + pontosTuristicos1 + pibcapita1 + (1 / densidade1);
 
-      // Cadastro das Cartas
+        superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + pibcapita2 + (1 / densidade2);
+
+        // Cadastro das Cartas
         // Cadastro carta 1
         // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
@@ -54,11 +57,11 @@ int main() {
             printf("Número de Pontos Turísticos: ");
             scanf("%d", &pontosTuristicos1);
 
-            // Limpeza de dados para exibição de informações limpas
+          // Limpeza de dados para exibição de informações limpas
             system("clear");
 
-        // Cadastro carta 2:
-        // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+          // Cadastro carta 2:
+          // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
             printf("\nInforme os dados da Carta 2:\n");
 
@@ -75,13 +78,13 @@ int main() {
             printf("Número de Pontos Turísticos: ");
             scanf("%d", &pontosTuristicos2);
 
-            // Limpeza de dados para exibição de informações limpas
+          // Limpeza de dados para exibição de informações limpas
             system("clear");
     
-            // Exibição dos Dados das Cartas
-            // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+          // Exibição dos Dados das Cartas
+          // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-            // Informações Carta 1:
+          // Informações Carta 1:
             
             printf("\nCarta 1:\n");
 
@@ -94,7 +97,7 @@ int main() {
             printf("Densidade populacional: %f\n", densidade1);
             printf("PIB per capita: %f\n", pibcapita1);
 
-            // Informações Carta 2:
+          // Informações Carta 2:
 
             printf("\nCarta 2:\n");
 
@@ -107,10 +110,22 @@ int main() {
             printf("Densidade populacional: %f\n", densidade2);
             printf("PIB per capita: %f\n", pibcapita2);
 
+            // Comparações das cartas
 
-    
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+            printf("\nComparação de Cartas:\n");
+            printf("População: Carta 1 venceu (%d)\n", populacao1 > populacao2);
+
+            printf("Área: Carta 1 venceu (%d)\n", area1 > area2);
+
+            printf("PIB: Carta 1 venceu (%d)\n", pib1 > pib2);
+
+            printf("Pontos Turísticos: Carta 1 venceu (%d)\n", pontosTuristicos1 > pontosTuristicos2);
+
+            printf("Densidade Populacional: Carta 2 venceu (%d)\n", densidade1 > densidade2);
+
+            printf("PIB per Capita: Carta 1 venceu (%d)\n", pibcapita1 > pibcapita2);
+
+            printf("Super Poder: Carta 1 venceu (%d)\n", superPoder1 > superPoder2);
 
     return 0;
 }
